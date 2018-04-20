@@ -1,0 +1,14 @@
+SELECT 
+mdl_haw_professoren.abk, 
+mdl_haw_veranstaltungen.abk,
+mdl_haw_studiengaenge.abk,
+mdl_haw_vl_verzeichnis.semester 
+FROM  
+mdl_haw_professoren,
+mdl_haw_studiengaenge, 
+mdl_haw_veranstaltungen, 
+mdl_haw_vl_verzeichnis  
+WHERE 
+mdl_haw_vl_verzeichnis.professorID  = mdl_haw_professoren.ID AND
+mdl_haw_vl_verzeichnis.studiengangID  = mdl_haw_studiengaenge.ID AND
+mdl_haw_vl_verzeichnis.veranstaltungID =  mdl_haw_veranstaltungen.ID   

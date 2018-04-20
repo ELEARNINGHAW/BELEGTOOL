@@ -1,0 +1,20 @@
+﻿Phase 0 Belegverfahren hat noch nicht begonnen
+Phase 1 Belegverfahren läuft für alle
+Phase 2: Belegverfahren läuft nur noch für für 1.Sem (>1. Sem können Eintragungen nicht mehr ändern)
+Phase 3: Belegverahren geschlossen, nur noch für Nachzügler
+Phase 4: Keine weiteren Buchungen möglich, unbest. Buchungen werden nicht angezeigt.
+
+Phase 3, Studis können nicht löschen. (wenn bestätigt)
+
+Koordinatoren, Umbuchungen nur bei unbestätigten Einträgen möglich machen
+Phasenzeiten in DB eintragen.
+
+107.55
+
+Cellular Respiration
+Flight trough the animal cell
+Flight trough the plant cell 
+How Neurons Work
+How Synapses Work
+Muscle Contraction
+Photosynthesis

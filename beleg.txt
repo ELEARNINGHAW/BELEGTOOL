@@ -1,0 +1,49 @@
+
+269 OR ID=270 OR ID=287 OR ID=285 OR ID=296 OR ID=297 OR ID=377 OR ID=378 OR ID=1476 OR ID=1478 OR ID=1485 OR ID=1488 OR ID=1495 OR ID=1496 OR ID=1498 OR ID=1499 OR ID=1505 OR ID=1510 OR ID=1511 OR ID=1507 OR ID=1508 OR ID=1521 OR ID=1513 OR ID=1514 OR ID=1516 OR ID=1524 OR ID=1527 OR ID=1528 OR ID=1534 OR ID=1535 OR ID=1546 OR ID=1547 OR ID=1549 OR ID=1550 OR ID=1554 OR ID=1555 OR ID=1557 OR ID=1558 OR ID=1583 OR ID=1584 OR ID=1860 OR ID=1640 OR ID=1641 OR ID=1652 OR ID=1653 OR ID=1654 OR ID=1657 OR ID=1658 OR ID=1805 OR ID=1730 OR ID=1752 OR ID=1754 OR ID=1861 OR ID=1830 OR ID=1936 OR ID=1937 OR ID=1956 OR ID=1957 OR ID=1980 OR ID=1982 OR ID=1984 OR ID= 0; 
+
+
+
+## IDs ermitteln STATUS W, 1 Semster 
+SELECT beleg.mdl_haw_wunschbelegliste.ID 
+FROM beleg.mdl_haw_wunschbelegliste , idm2.mdl_haw_idm
+WHERE beleg.mdl_haw_wunschbelegliste.studID = idm2.mdl_haw_idm.matrikelnr
+AND beleg.mdl_haw_wunschbelegliste.status = 'W'
+AND idm2.mdl_haw_idm.semester =1
+AND beleg.mdl_haw_wunschbelegliste.veranstaltungID != -1
+AND ( beleg.mdl_haw_wunschbelegliste.phase !=1 OR beleg.mdl_haw_wunschbelegliste.phase !=2) 
+
+
+
+SELECT COUNT(*) as anz, *
+FROM beleg.mdl_haw_wunschbelegliste , idm2.mdl_haw_idm
+WHERE beleg.mdl_haw_wunschbelegliste.studID = idm2.mdl_haw_idm.matrikelnr
+AND beleg.mdl_haw_wunschbelegliste.status = 'W'
+AND idm2.mdl_haw_idm.semester =1
+AND beleg.mdl_haw_wunschbelegliste.veranstaltungID != -1
+AND ( beleg.mdl_haw_wunschbelegliste.phase !=1 OR beleg.mdl_haw_wunschbelegliste.phase !=2) 
+
+
+UPDATE `beleg`.`mdl_haw_wunschbelegliste` SET `status` = 'B' 
+FROM beleg.mdl_haw_wunschbelegliste , idm2.mdl_haw_idm
+WHERE beleg.mdl_haw_wunschbelegliste.studID = idm2.mdl_haw_idm.matrikelnr
+AND idm2.mdl_haw_idm.semester =1
+AND beleg.mdl_haw_wunschbelegliste.veranstaltungID != -1
+AND ( beleg.mdl_haw_wunschbelegliste.phase !=1 OR beleg.mdl_haw_wunschbelegliste.phase !=2) 
+
+
+
+
+SELECT *
+FROM beleg.mdl_haw_wunschbelegliste , idm2.mdl_haw_idm
+WHERE beleg.mdl_haw_wunschbelegliste.studID = idm2.mdl_haw_idm.matrikelnr
+AND idm2.mdl_haw_idm.semester !=1
+AND beleg.mdl_haw_wunschbelegliste.veranstaltungID != -1
+AND ( beleg.mdl_haw_wunschbelegliste.phase !=1 OR beleg.mdl_haw_wunschbelegliste.phase !=2 )
+
+
+UPDATE `beleg`.`mdl_haw_wunschbelegliste` SET `status` = 'B' 
+FROM beleg.mdl_haw_wunschbelegliste , idm2.mdl_haw_idm
+WHERE beleg.mdl_haw_wunschbelegliste.studID = idm2.mdl_haw_idm.matrikelnr
+AND idm2.mdl_haw_idm.semester !=1
+AND beleg.mdl_haw_wunschbelegliste.veranstaltungID != -1
+AND ( beleg.mdl_haw_wunschbelegliste.phase !=1 OR beleg.mdl_haw_wunschbelegliste.phase !=2) 
